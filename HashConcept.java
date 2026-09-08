@@ -15,7 +15,7 @@ class HashConcept{
         int[] Hash = new int[max+1];
         // Hash[max] = {0};
         for(int i=0;i<n;i++){
-            Hash[arr[i]] += 1;
+            Hash[arr[i]]++;
         }
         for(int i=q;i>=0;i--){
             int number = sc.nextInt();
