@@ -59,6 +59,29 @@ public class HashMapPractice {
 
 
         //3. Count distinct Elements
+        // Scanner sc = new Scanner(System.in);
+        // int n = sc.nextInt();
+
+        // int[] arr = new int[n];
+        // for(int i=0;i<n;i++){
+        //     arr[i] = sc.nextInt();
+        // }
+        // int count = 0;
+        // HashMap<Integer,Integer> mpp = new HashMap<>();
+        // for(int i=0;i<n;i++){
+        //     mpp.put(arr[i],mpp.getOrDefault(arr[i],0)+1);
+        // }
+        // // Method - 1
+        // // for(Map.Entry<Integer,Integer> entry: mpp.entrySet()){
+        // //         count++;
+        // // }
+        // // System.out.println(count);
+
+        // //Method - 2 (in-built method)
+        // System.out.println(mpp.size());
+
+
+        //4. Printing Duplicates
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
 
@@ -66,18 +89,14 @@ public class HashMapPractice {
         for(int i=0;i<n;i++){
             arr[i] = sc.nextInt();
         }
-        int count = 0;
         HashMap<Integer,Integer> mpp = new HashMap<>();
         for(int i=0;i<n;i++){
             mpp.put(arr[i],mpp.getOrDefault(arr[i],0)+1);
         }
-        // Method - 1
-        // for(Map.Entry<Integer,Integer> entry: mpp.entrySet()){
-        //         count++;
-        // }
-        // System.out.println(count);
-
-        //Method - 2 (in-built method)
-        System.out.println(mpp.size());
+        for(Map.Entry<Integer,Integer> entry : mpp.entrySet()){
+            if(entry.getValue() > 1){
+                System.out.println(entry.getKey());
+            }
+        }
     }
 }
