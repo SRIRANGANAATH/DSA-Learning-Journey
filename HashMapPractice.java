@@ -82,21 +82,43 @@ public class HashMapPractice {
 
 
         //4. Printing Duplicates
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
+        // Scanner sc = new Scanner(System.in);
+        // int n = sc.nextInt();
 
-        int[] arr = new int[n];
-        for(int i=0;i<n;i++){
-            arr[i] = sc.nextInt();
+        // int[] arr = new int[n];
+        // for(int i=0;i<n;i++){
+        //     arr[i] = sc.nextInt();
+        // }
+        // HashMap<Integer,Integer> mpp = new HashMap<>();
+        // for(int i=0;i<n;i++){
+        //     mpp.put(arr[i],mpp.getOrDefault(arr[i],0)+1);
+        // }
+        // for(Map.Entry<Integer,Integer> entry : mpp.entrySet()){
+        //     if(entry.getValue() > 1){
+        //         System.out.println(entry.getKey());
+        //     }
+        // }
+
+
+        //5. Checking whether two strings are anagrams
+        Scanner sc = new Scanner(System.in);
+        String S1 = sc.nextLine();
+        String S2 = sc.nextLine();
+
+        String s1 = S1.replaceAll("\\s+","").toLowerCase();
+        String s2 = S2.replaceAll("\\s+","").toLowerCase();
+        HashMap<Character,Integer> mpp1 = new HashMap<>();
+        HashMap<Character,Integer> mpp2 = new HashMap<>();
+        for(int i=0,j=0;i<s1.length() || j<s2.length();i++,j++){
+            if(i<s1.length())
+            mpp1.put(s1.charAt(i),mpp1.getOrDefault(s1.charAt(i), 0)+1);
+            if(j<s2.length())
+            mpp2.put(s2.charAt(j),mpp2.getOrDefault(s2.charAt(j), 0)+1);
         }
-        HashMap<Integer,Integer> mpp = new HashMap<>();
-        for(int i=0;i<n;i++){
-            mpp.put(arr[i],mpp.getOrDefault(arr[i],0)+1);
-        }
-        for(Map.Entry<Integer,Integer> entry : mpp.entrySet()){
-            if(entry.getValue() > 1){
-                System.out.println(entry.getKey());
-            }
+        if(mpp1.equals(mpp2)){
+            System.out.println("Anagram");
+        }else{
+            System.out.println("Not an Anagram");
         }
     }
 }
