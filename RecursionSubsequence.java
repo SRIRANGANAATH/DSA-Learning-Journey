@@ -8,7 +8,7 @@ class RecursionSubsequence {
             if (list.isEmpty() == true) {
                 System.out.println("{}");
             } else {
-                for (Integer num : list) {
+                for (var num : list) {
                     System.out.print(num + " ");
                 }
                 System.out.println();
