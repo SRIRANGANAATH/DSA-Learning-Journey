@@ -35,7 +35,7 @@ public class HashMapPractice {
         //     arr[i] = sc.nextInt();
         // }
         // int max=0,maxElement=0;
-        // int low=0,lowElement=0;
+        // int low=INTEGER.MIN_VALUE,lowElement=0;
         // HashMap<Integer,Integer> mpp = new HashMap<>();
         // for(int i=0;i<n;i++){
         //     mpp.put(arr[i],mpp.getOrDefault(arr[i],0)+1); //returns current frequency if found and 0 if not and increments by 1
@@ -49,7 +49,7 @@ public class HashMapPractice {
         //         max = currentFrequency;
         //         maxElement = currentElement;
         //     }
-        //     if(max > currentFrequency){
+        //     if(low > currentFrequency){
         //         low = currentFrequency;
         //         lowElement = currentElement;
         //     }
