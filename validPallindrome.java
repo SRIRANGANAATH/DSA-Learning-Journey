@@ -53,6 +53,36 @@
 
 
 //optimal
+import java.util.*;
+
 public class validPallindrome {
-    
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String STR = sc.nextLine();
+        String str = STR.toLowerCase();
+        int i=0,j=str.length()-1;
+        boolean pal = true;
+        while(i<j){
+            if(!Character.isLetterOrDigit(str.charAt(i))){
+                i++;
+            }
+            else if(!Character.isLetterOrDigit(str.charAt(j))){
+                j--;
+            }
+            else if(str.charAt(i)!=str.charAt(j)){
+                pal = false;
+                break;
+            }
+            else{
+                i++;
+                j--;
+            }
+        }
+        if(pal==true){
+            System.out.println("Pallindrome");
+        }else{
+            System.out.println("Not a Pallindrome");
+        }
+        sc.close();
+    }
 }
