@@ -1,6 +1,6 @@
 public class waterTrapping {
     public static void main(String[] args) {
-        int[] height = { 4, 2, 0, 3, 2, 5 };
+        int[] height = { 3,0,2,0,4 };
         int left = 0;
         int right = height.length - 1;
         int leftmax = 0;
